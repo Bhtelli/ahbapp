@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Ahbap</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .register-content {
+            max-width: 800px;
+            margin: 7.5rem auto 2rem;
+            padding: 0 13rem;
+        }
+
+        .register-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .register-header h1 {
+            color: #212529;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .register-header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .register-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #7fc349;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #212529;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #7fc349;
+            box-shadow: 0 0 0 2px rgba(127, 195, 73, 0.2);
+        }
+
+        .form-group input.error {
+            border-color: #dc3545;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .register-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #7fc349;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-button:hover {
+            background-color: #467122;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #6c757d;
+        }
+
+        .login-link a {
+            color: #7fc349;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-checkbox input[type="checkbox"] {
+            width: 1.2rem;
+            height: 1.2rem;
+            border: 2px solid #e9ecef;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        .terms-checkbox label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .terms-checkbox a {
+            color: #7fc349;
+            text-decoration: none;
+        }
+
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .register-content {
+                padding: 0 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-navbar">
+        <div class="nav-div ust">
+            <div class="ortala-yd">🤍&nbsp;SEVGİNİN ve GERÇEĞİN PEŞİNDEYİZ...</div>
+            <div class="ortala-yd social-logo">
+                <div class="yardım-btn">Yardım Talep Et 💚
+                    <a href="bagis.html" target="_blank"></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-div alt">
+            <div><img src="./ahbap-logo.png" class="ahbap-nb-logo" /></div>
+            <div class="ortala-yd social-logo sekmeler">
+                <div>
+                    <a href="home.html">Ana Sayfa</a>
+                </div>
+                <div>
+                    <a href="dernek.html">Ahbap Derneği</a>
+                </div>
+                <div>
+                    <a href="platform.html">Ahbap Platformu</a>
+                </div>
+                <div>
+                    <a href="haberler.html">Haberler</a>
+                </div>
+                <div>
+                    <a href="search.html">
+                        <i class="fa-solid fa-magnifying-glass" style="cursor: pointer;"></i>
+                    </a>
+                </div>
+                <div><a href="entry.html">Üyelik</a></div>
+                <div>
+                    <a href="bagis.html" data-protected>
+                        <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="register-content">
+        <div class="register-header">
+            <h1>Kayıt Ol</h1>
+            <p>Ahbap ailesine katılmak için aşağıdaki formu doldurun.</p>
+        </div>
+
+        <form class="register-form" id="registerForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">Ad</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <div class="error-message">Lütfen adınızı giriniz.</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Soyad</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <div class="error-message">Lütfen soyadınızı giriniz.</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message">Lütfen geçerli bir e-posta adresi giriniz.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message">Lütfen geçerli bir telefon numarası giriniz.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message">Şifre en az 8 karakter olmalıdır.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Şifre Tekrar</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error-message">Şifreler eşleşmiyor.</div>
+            </div>
+
+            <div class="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    <a href="#">Kullanım Koşulları</a>'nı ve <a href="#">Gizlilik Politikası</a>'nı okudum ve kabul ediyorum.
+                </label>
+            </div>
+
+            <button type="submit" class="register-button">Kayıt Ol</button>
+        </form>
+
+        <div class="login-link">
+            Zaten üye misiniz? <a href="entry.html">Giriş Yap</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahbap</h3>
+                <p>Toplumsal dayanışma ve yardımlaşma platformu</p>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ahbap.org</p>
+                <p>Tel: +90 212 123 45 67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ahbap. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registerForm');
+            const inputs = form.querySelectorAll('input');
+            const errorMessages = form.querySelectorAll('.error-message');
+
+            // Form validation
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Reset all error states
+                inputs.forEach(input => input.classList.remove('error'));
+                errorMessages.forEach(message => message.style.display = 'none');
+
+                // Validate each field
+                inputs.forEach((input, index) => {
+                    if (input.type === 'checkbox') {
+                        if (!input.checked) {
+                            isValid = false;
+                            errorMessages[index].style.display = 'block';
+                        }
+                    } else if (input.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value)) {
+                            isValid = false;
+                            input.classList.add('error');
+                            errorMessages[index].style.display = 'block';
+                        }
+                    } else if (input.type === 'password') {
+                        if (input.value.length < 8) {
+                            isValid = false;
+                            input.classList.add('error');
+                            errorMessages[index].style.display = 'block';
+                        }
+                        // Check password confirmation
+                        if (input.id === 'confirmPassword' && input.value !== document.getElementById('password').value) {
+                            isValid = false;
+                            input.classList.add('error');
+                            errorMessages[index].style.display = 'block';
+                        }
+                    } else if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add('error');
+                        errorMessages[index].style.display = 'block';
+                    }
+                });
+
+                if (isValid) {
+                    // Form is valid, you can submit it here
+                    console.log('Form is valid, submitting...');
+                    // Add your form submission logic here
+                }
+            });
+
+            // Real-time validation
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', function() {
+                    if (input.classList.contains('error')) {
+                        input.classList.remove('error');
+                        errorMessages[index].style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html> 

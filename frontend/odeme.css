@@ -1,0 +1,365 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.my-navbar{
+    min-height: 6.6rem;
+    background: #7fc349;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 0.5rem 0;
+
+    position:fixed;
+    min-width: 100vw;
+
+    top: 0;
+
+    z-index: 999;
+}
+.nav-div{
+    min-height: 3rem;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 13rem;
+}
+.sekmeler{
+    font-size: 0.80rem;
+    font-weight: bold;
+}
+
+.ortala-yd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yardım-btn{
+    border-radius: 0.22rem;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 0.40rem;
+}
+
+.bagis-btn{
+    background: #e74c3c;
+    padding: 0.75rem;
+}
+
+.bagis-btn:hover{
+    background: #ffed24;
+    color: black;
+    transition: 0.5s;
+}
+
+.ahbap-nb-logo{
+    max-height: 2rem;
+}
+
+.social-logo{
+    display: flex;
+    float: left;
+    gap: 2rem;
+}
+
+.social-logo i{
+    font-size: 1.2rem;
+}
+/********* HOME **********/
+
+.anasayfa{
+    color: white;
+    margin-top: 6.5rem;
+    min-height: calc(100vh - 16rem);
+    padding: 1rem 13rem;
+
+    background:#7fc349;
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+
+.payment-container {
+    max-width: 1200px;
+    margin: 7.5rem auto 2rem;
+    padding: 0 13rem;
+}
+
+.payment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.order-summary, .payment-form {
+    padding: 1.5rem;
+}
+
+.order-summary {
+    background: #f8f9fa;
+    border-radius: 0.25rem;
+}
+
+.order-summary h2, .payment-form h2 {
+    color: #212529;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.summary-items {
+    margin-bottom: 1.5rem;
+}
+
+.summary-total {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+.subtotal, .shipping, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #212529;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #7fc349;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background-color: #7fc349;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+    background-color: #467122;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 0 1rem;
+    }
+    
+    .payment-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Input Focus States */
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #467122;
+    box-shadow: 0 0 0 2px rgba(127, 195, 73, 0.2);
+}
+
+/* Error States */
+.form-group input.error, .form-group textarea.error {
+    border-color: #f23333;
+    box-shadow: 0 0 0 2px rgba(242, 51, 51, 0.1);
+}
+
+.error-message {
+    color: #f23333;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Loading State */
+.pay-button.loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #7fc349;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #467122;
+}
+
+/* Footer Styles */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 13rem;
+    background-color: #f8f9fa;
+}
+
+.footer-section h3 {
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: #7fc349;
+    color: white;
+}
+
+/* CVV Styles */
+.cvv-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cvv-info {
+    position: relative;
+    cursor: help;
+}
+
+.cvv-image {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.cvv-image:hover {
+    opacity: 1;
+}
+
+.cvv-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.cvv-info:hover .cvv-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cvv-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Update form-group for CVV */
+.form-group:has(.cvv-container) {
+    margin-bottom: 2rem;
+}

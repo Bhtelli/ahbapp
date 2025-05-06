@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama - Ahbap</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .search-content {
+            max-width: 1200px;
+            margin: 7.5rem auto 2rem;
+            padding: 0 13rem;
+        }
+
+        .search-header {
+            margin-bottom: 2rem;
+        }
+
+        .search-header h1 {
+            color: #212529;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .search-form {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            padding-right: 3rem;
+            border: 2px solid #7fc349;
+            border-radius: 0.25rem;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #467122;
+            box-shadow: 0 0 0 2px rgba(127, 195, 73, 0.2);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #7fc349;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .search-button:hover {
+            color: #467122;
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border: 2px solid #7fc349;
+            border-radius: 0.25rem;
+            background-color: white;
+            color: #212529;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button:hover, .filter-button.active {
+            background-color: #7fc349;
+            color: white;
+        }
+
+        .search-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .result-card {
+            background-color: white;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #7fc349;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .result-info {
+            padding: 1.5rem;
+        }
+
+        .result-info h3 {
+            color: #212529;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-info p {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .result-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .result-category {
+            display: inline-block;
+            background-color: #7fc349;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #6c757d;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #7fc349;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .search-content {
+                padding: 0 1rem;
+            }
+            
+            .search-filters {
+                flex-direction: column;
+            }
+            
+            .filter-button {
+                width: 100%;
+            }
+            
+            .search-results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="my-navbar">
+        <div class="nav-div ust">
+            <div class="ortala-yd">🤍&nbsp;SEVGİNİN ve GERÇEĞİN PEŞİNDEYİZ...</div>
+            <div class="ortala-yd social-logo">
+                <div class="yardım-btn">Yardım Talep Et 💚
+                    <a href="bagis.html" target="_blank"></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-div alt">
+            <div><img src="./ahbap-logo.png" class="ahbap-nb-logo" /></div>
+            <div class="ortala-yd social-logo sekmeler">
+                <div>
+                    <a href="home.html">Ana Sayfa</a>
+                </div>
+                <div>
+                    <a href="dernek.html">Ahbap Derneği</a>
+                </div>
+                <div>
+                    <a href="platform.html">Ahbap Platformu</a>
+                </div>
+                <div>
+                    <a href="haberler.html">Haberler</a>
+                </div>
+                <div>
+                    <a href="search.html">
+                        <i class="fa-solid fa-magnifying-glass" style="cursor: pointer;"></i>
+                    </a>
+                </div>
+                <div><a href="entry.html">Üyelik</a></div>
+                <div>
+                    <a href="bagis.html" data-protected>
+                        <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="search-content">
+        <div class="search-header">
+            <h1>Arama</h1>
+        </div>
+
+        <form class="search-form" id="searchForm">
+            <input type="text" class="search-input" placeholder="Ne aramak istiyorsunuz?" id="searchInput">
+            <button type="submit" class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
+        <div class="search-filters">
+            <button class="filter-button active" data-filter="all">Tümü</button>
+            <a href="haberler.html">
+            <button class="filter-button" data-filter="haberler">Haberler</button>
+            </a>
+            <a href="projeler.html">
+            <button class="filter-button" data-filter="projeler">Projeler</button>
+            </a>
+            <a href="urun.html">
+            <button class="filter-button" data-filter="urunler">Ürünler</button>
+            </a>
+            <a href="haberler.html">
+            <button class="filter-button" data-filter="etkinlikler">Etkinlikler</button>
+        </a>
+        </div>
+
+        <div class="search-results" id="searchResults">
+            <!-- Results will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahbap</h3>
+                <p>Toplumsal dayanışma ve yardımlaşma platformu</p>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ahbap.org</p>
+                <p>Tel: +90 212 123 45 67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ahbap. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchForm = document.getElementById('searchForm');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const filterButtons = document.querySelectorAll('.filter-button');
+            let currentFilter = 'all';
+
+            // Sample data - replace with your actual data
+            const sampleData = [
+                {
+                    title: 'Ahbap\'ın Yeni Eğitim Projesi',
+                    description: '1000 öğrenciye burs desteği sağlanacak yeni eğitim projesi başladı.',
+                    image: 'haber-img.png',
+                    category: 'projeler',
+                    date: '15 Mart 2024'
+                },
+                {
+                    title: 'Ahbap Gönüllüleri Buluşması',
+                    description: 'İstanbul\'da gerçekleşen gönüllü buluşmasında yeni projeler değerlendirildi.',
+                    image: 'haber-img.png',
+                    category: 'etkinlikler',
+                    date: '10 Mart 2024'
+                },
+                {
+                    title: 'Doğal Afet Bölgesine Yardım',
+                    description: 'Ahbap Derneği, doğal afet bölgesine gönderdiği yardım malzemeleri ile 5000 kişiye ulaştı.',
+                    image: 'haber-img.png',
+                    category: 'haberler',
+                    date: '5 Mart 2024'
+                }
+            ];
+
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    performSearch();
+                });
+            });
+
+            // Search form submission
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                performSearch();
+            });
+
+            function performSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    // Eğer kullanıcı 'iptal' yazmışsa, arama yapılmasın
+    if (searchTerm === 'iptal') {
+        searchResults.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-search"></i>
+                <p>Arama iptal edildi.</p>
+            </div>
+        `;
+        return;
+    }
+
+    const filteredResults = sampleData.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm) ||
+                              item.description.toLowerCase().includes(searchTerm);
+        const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
+        return matchesSearch && matchesFilter;
+    });
+
+    displayResults(filteredResults);
+}
+
+
+            // Display results
+            function displayResults(results) {
+                searchResults.innerHTML = '';
+
+                if (results.length === 0) {
+                    searchResults.innerHTML = `
+                        <div class="no-results">
+                            <i class="fas fa-search"></i>
+                            <p>Aramanızla eşleşen sonuç bulunamadı.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                results.forEach(result => {
+                    const resultCard = document.createElement('div');
+                    resultCard.className = 'result-card';
+                    resultCard.innerHTML = `
+                        <img src="${result.image}" alt="${result.title}" class="result-image">
+                        <div class="result-info">
+                            <span class="result-category">${result.category}</span>
+                            <h3>${result.title}</h3>
+                            <p>${result.description}</p>
+                            <div class="result-meta">
+                                <span>${result.date}</span>
+                            </div>
+                        </div>
+                    `;
+                    searchResults.appendChild(resultCard);
+                });
+            }
+
+            // Initial search
+            performSearch();
+        });
+
+        // Search functionality
+        document.querySelector('.search-button').addEventListener('click', function() {
+            const searchInput = document.querySelector('.search-input');
+            const searchTerm = searchInput.value.trim();
+            
+            if (searchTerm) {
+                const confirmSearch = confirm('Aramak istediğinizden emin misiniz?');
+                if (confirmSearch) {
+                    window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+
+        // Allow search on Enter key
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    const confirmSearch = confirm('Aramak istediğinizden emin misiniz?');
+                    if (confirmSearch) {
+                        window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

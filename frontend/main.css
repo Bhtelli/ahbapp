@@ -1,0 +1,434 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.my-navbar{
+    min-height: 6.6rem;
+    background: #7fc349;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 0.5rem 0;
+
+    position:fixed;
+    min-width: 100vw;
+
+    top: 0;
+
+    z-index: 999;
+}
+
+.nav-div{
+    min-height: 3rem;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 13rem;
+}
+
+.sekmeler{
+    font-size: 0.80rem;
+    font-weight: bold;
+}
+
+.ortala-yd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yardım-btn{
+    border-radius: 0.22rem;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 0.40rem;
+}
+
+.bagis-btn{
+    background: #e74c3c;
+    padding: 0.75rem;
+}
+
+.bagis-btn:hover{
+    background: #ffed24;
+    color: black;
+    transition: 0.5s;
+}
+
+.ahbap-nb-logo{
+    max-height: 2rem;
+}
+
+.social-logo{
+    display: flex;
+    float: left;
+    gap: 2rem;
+}
+
+.social-logo i{
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/********* HOME **********/
+
+.anasayfa{
+    color: white;
+    margin-top: 7.5rem;
+    min-height: calc(100vh - 16rem);
+    padding: 1rem 13rem;
+
+    background:#7fc349;
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+
+.giris{
+    gap: 1rem;
+
+
+}
+.haber{
+    min-width: 55.7%;
+    flex-direction: column;
+    background: black;
+}
+.bagis{
+    background: white;
+    padding: 1rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+    border-radius: 0.25rem;
+}
+.bagis-gif{
+    max-width: 28.5rem;
+}
+.bagis-tutar{
+    min-width: 100%;
+    background: #679622;
+    display: flex;
+    gap: 0.1rem;
+    padding: .1rem;
+    justify-content: space-around;
+}
+.tutarlar{
+    background: #7fc349;
+    min-width: 24.5%;
+    min-height: 2.25rem;
+    font-weight: bold;
+    color: white;
+}
+.tutarlar:hover{
+    background: black;
+    transition: 0.5s;
+}
+
+.tutar-input{
+    min-height: 1.75rem;
+    font-weight: bold;
+    font-size: 1.15rem;
+    padding: 0.75rem;
+    border: 2px solid #7fc349;
+    border-radius: 0.25rem;
+}
+
+.bagıs-yap-btn{
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    border: none;
+    background: #7fc349;
+    color: white;
+    font-weight: bold;
+}
+.bagıs-yap-btn:hover{
+    background: #467122;
+}
+.bagıs-yap-btn-1{
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    border: none;
+    background: #f23333;
+    color: white;
+    font-weight: bold;
+}
+.bagıs-yap-btn-1:hover{
+    background: #dcf000;
+    color: black;
+    transition: 0.25s;
+}
+.reklam{
+    position: rgb(88, 153, 35);
+    left: 0;
+    color: #1f3731;
+    font-size: var(--font-size-12);
+    font-family: roboto, sans-serif;
+    background: #fff;
+    transition: left .2s linear, right .2s linear;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+} 
+
+
+.haber-img{
+    max-width: 100%;
+    opacity: 60%;
+}
+.haber-det{
+    min-width: 40.45%;
+    max-width: 40.45%;
+    height: 53.77%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+}
+.habet-det-text{
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+/*********** REKLAM **********/
+.reklam{
+    padding: 2rem 13rem;
+}
+.reklam-img{
+    max-width: 100%;
+}
+
+
+/********** HABERLER *********/
+.haberler{
+    padding: 5rem 13rem;
+    background: #7fc349;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    color: white;
+}
+
+.short-text { display: block; }
+.full-text { 
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.full-text.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Buton Stili */
+.read-more {
+    background: #7fc349;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.read-more:hover {
+    background: #467122;
+}
+.project-detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.detail-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.category-badge {
+    background: #7fc349;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 1rem 0;
+}
+
+#project-body {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+#project-body h3 {
+    color: #7fc349;
+    margin: 2rem 0 1rem;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #7fc349;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #467122;
+}
+
+/* Footer Styles */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 13rem;
+    background-color: #f8f9fa;
+}
+
+.footer-section h3 {
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: #7fc349;
+    color: white;
+}
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bagis-content {
+                padding: 0 1rem;
+            }
+            
+            .bagis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .payment-container {
+                padding: 0 1rem;
+            }
+            
+            .payment-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }

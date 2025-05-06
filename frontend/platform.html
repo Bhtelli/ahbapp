@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahbap Platformu</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .platform-content {
+            max-width: 1200px;
+            margin: 7.5rem auto 2rem;
+            padding: 0 13rem;
+        }
+
+        .platform-section {
+            margin-bottom: 2rem;
+            background-color: white;
+            border-radius: 0.25rem;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-section h2 {
+            color: #212529;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .platform-section p {
+            line-height: 1.6;
+            color: #212529;
+            margin-bottom: 1rem;
+        }
+
+        .platform-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.25rem;
+            text-align: center;
+            border: 2px solid #7fc349;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #467122;
+        }
+
+        .feature-card h3 {
+            color: #212529;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .feature-card p {
+            color: #212529;
+        }
+
+        .platform-cta {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .platform-cta button {
+            background-color: #7fc349;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-radius: 0.25rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .platform-cta button:hover {
+            background-color: #467122;
+        }
+
+        .platform-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.25rem;
+            text-align: center;
+            border: 2px solid #7fc349;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: #7fc349;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #212529;
+            font-weight: 500;
+        }
+        /* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #7fc349;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #467122;
+}
+
+/* Footer Styles */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 13rem;
+    background-color: #f8f9fa;
+}
+
+.footer-section h3 {
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: #7fc349;
+    color: white;
+}
+
+
+        @media (max-width: 768px) {
+            .platform-content {
+                padding: 0 1rem;
+            }
+            
+            .platform-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="my-navbar">
+        <div class="nav-div ust">
+            <div class="ortala-yd">🤍&nbsp;SEVGİNİN ve GERÇEĞİN PEŞİNDEYİZ...</div>
+            <div class="ortala-yd social-logo">
+                <div class="yardım-btn">Yardım Talep Et 💚
+                    <a href="bagis.html" target="_blank"></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-div alt">
+            <div><img src="./ahbap-logo.png" class="ahbap-nb-logo" /></div>
+            <div class="ortala-yd social-logo sekmeler">
+                <div>
+                    <a href="home.html">Ana Sayfa</a>
+                </div>
+                <div>
+                    <a href="dernek.html">Ahbap Derneği</a>
+                </div>
+                <div>
+                    <a href="platform.html">Ahbap Platformu</a>
+                </div>
+                <div>
+                    <a href="haberler.html">Haberler</a>
+                </div>
+                <div>
+                    <a href="search.html">
+                        <i class="fa-solid fa-magnifying-glass" style="cursor: pointer;"></i>
+                    </a>
+                </div>
+                <div><a href="Giris.html">Üyelik</a></div>
+                <div>
+                    <a href="bagis.html" target="_blank">
+                        <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="platform-content">
+        <section class="platform-section">
+            <h2>Ahbap Platformu</h2>
+            <p>Ahbap Platformu, toplumsal dayanışma ve yardımlaşma için tasarlanmış bir dijital ekosistemdir. Platformumuz, ihtiyaç sahipleri ile yardımseverleri bir araya getirerek, toplumsal sorumluluk bilinciyle hareket eden bir topluluk oluşturmayı hedeflemektedir.</p>
+        </section>
+
+        <section class="platform-section">
+            <h2>Platform Özellikleri</h2>
+            <div class="platform-features">
+                <div class="feature-card">
+                    <a href="bagis.html">
+                    <h3>Yardım Talepleri</h3>
+                    </a>
+                    <p>İhtiyaç sahipleri, platform üzerinden yardım taleplerini oluşturabilir ve paylaşabilir.</p>
+                </div>
+                <div class="feature-card">
+                    <a href="bagis.html">
+                    <h3>Bağış Yönetimi</h3>
+                    </a>
+                    <p>Yardımseverler, güvenli ve şeffaf bir şekilde bağışlarını gerçekleştirebilir.</p>
+                    
+                </div>
+                <div class="feature-card">
+                    <a href="entry.html">
+                    <h3>Topluluk Etkileşimi</h3>
+                    </a>
+                    <p>Platform üyeleri, projeler ve etkinlikler hakkında bilgi alabilir ve katılım sağlayabilir.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-section">
+            <h2>Platform İstatistikleri</h2>
+            <div class="platform-stats">
+                <div class="stat-card">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Aktif Üye</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Tamamlanan Yardım</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Toplam Bağış (TL)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-section">
+            <h2>Platforma Katılın</h2>
+            <p>Ahbap Platformu'na katılarak, toplumsal dayanışmaya katkıda bulunabilir ve ihtiyaç sahiplerine destek olabilirsiniz.</p>
+            <div class="platform-cta">
+                <button onclick="window.location.href='Kayit.html'">Üye Ol</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahbap</h3>
+                <p>Toplumsal dayanışma ve yardımlaşma platformu</p>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ahbap.org</p>
+                <p>Tel: +90 212 123 45 67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ahbap. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 

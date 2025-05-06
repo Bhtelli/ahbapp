@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Yeni Yıl Bağış- Ahbap </title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+   .form-container {
+    padding:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: right;
+    padding: 80px;
+}
+
+.form-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 80px;
+}
+
+.foto-detay {
+    flex: 1;
+    max-width: 400px;
+    padding: 1rem 1rem; 
+}
+
+.foto-detay img {
+    width: 100%;
+    height: auto;
+}
+.destek-form h2 {
+      font-size: 1.2rem;
+      color: #2e7d32;
+      border-bottom: 2px solid #7fc349;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+
+.donation-form {
+    flex: 1.5;
+    max-width: 600px;
+}
+
+.destek-form {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.destek-form h1{
+    font-size: 1.3rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #7fc349;
+    padding-bottom: 10px;
+}
+
+.donation-form .destek-form h2 {
+    font-size: 1.3rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #7fc349;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #7fc349;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(127, 195, 73, 0.5);
+}
+
+.error-message {
+    font-size: 0.85rem;
+    color: red;
+    margin-top: 5px;
+    display: none; 
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #7fc349;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5d9d35;
+}
+
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #7fc349;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #467122;
+}
+
+/* Footer Styles */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 13rem;
+    background-color: #f8f9fa;
+}
+
+.footer-section h3 {
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem;
+    background-color: #7fc349;
+    color: white;
+}
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bagis-content {
+                padding: 0 1rem;
+            }
+            
+            .bagis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="my-navbar">
+
+        <div class="nav-div ust">
+            <div class="ortala-yd">🤍&nbsp;SEVGİNİN ve GERÇEĞİN PEŞİNDEYİZ...</div>
+            <div class="ortala-yd social-logo">
+                <div class="yardım-btn">Yardım Talep Et 💚
+                    <a href="bagis.html" target="_blank"></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank">
+                      <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://www.twitter.com/ahbap.org"target="_blank">
+                      <i class="fa-brands fa-twitter"></i>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                  </div>
+                                                      
+                  <div>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                  </div>
+                  
+            </div>
+        </div>
+
+        <div class="nav-div alt">
+            <div><img src="./ahbap-logo.png" class="ahbap-nb-logo" /></div>
+            <div class="ortala-yd social-logo sekmeler">
+                <div>
+                    <a href="home.html">Ana Sayfa</a>
+                </div>
+                <div>
+                    <a href="dernek.html">Ahbap Derneği</a>
+                </div>
+                <div>
+                    <a href="platform.html">Ahbap Platformu</a>
+                </div>
+                <div>
+                    <a href="haberler.html">Haberler</a>
+                </div>
+                <div>
+                    <a href="search.html">
+                      <i class="fa-solid fa-magnifying-glass" style="cursor: pointer;"></i>
+                    </a>
+                  </div>
+                  
+                <div><a href="entry.html">Üyelik</a></div>
+                <div>
+                    <a href="bagis.html" target="_blank">
+                    <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <main class="form-container">
+        <div class="form-content">
+          <div class="foto-detay">
+            <img src="yeniyil.png" alt="Destek Görseli">
+          </div>
+          <form id="donation-form" class="donation-form">
+              <div class="destek-form">
+                  <h2>Kim Hediye Ediyor</h2>
+                  <div class="form-group">
+                      <label for="hediye-isim">Ad/Firma Adı</label>
+                      <input type="text" id="hediye-isim" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="hediye-eposta">E-posta</label>
+                      <input type="email" id="hediye-eposta" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="hediye-telefon">Telefon Numarası</label>
+                      <input type="tel" id="hediye-telefon" required>
+                  </div>
+              </div>
+          
+              <div class="destek-form">
+                  <h2>Kimin Adına Düzenlenecek</h2>
+                  <div class="form-group">
+                      <label for="ad-soyad">Ad-Soyad</label>
+                      <input type="text" id="ad-soyad" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="eposta-adına">E-posta</label>
+                      <input type="email" id="eposta-adına" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="telefon-adına">Telefon Numarası</label>
+                      <input type="tel" id="telefon-adına" required>
+                  </div>
+              </div>
+          
+              <div style="text-align: right; margin-top: 30px;">
+                  <button type="submit">Ödemeyi Tamamla</button>
+              </div>
+      </form>
+        </div>
+      </main>
+      
+        
+     
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ahbap</h3>
+                <p>Toplumsal dayanışma ve yardımlaşma platformu</p>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ahbap.org</p>
+                <p>Tel: +90 212 123 45 67</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sosyal Medya</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ahbap.org" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/ahbap.org" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ahbap.org" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/ahbap.org" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ahbap. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById("donation-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // formu durdur
+            const inputs = this.querySelectorAll("input");
+            let allFilled = true;
+        
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = "red";
+                    allFilled = false;
+                } else {
+                    input.style.borderColor = "#7fc349";
+                }
+            });
+        
+            if (allFilled) {
+                window.location.href = "odeme.html";
+            } else {
+                alert("Lütfen tüm alanları doldurunuz.");
+            }
+        });
+        </script>
+        
+</body>
+</html>

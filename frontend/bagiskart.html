@@ -287,7 +287,23 @@
     <div class="basket-notification" id="basketNotification">
         Ürün sepete eklendi!
     </div>
-
+    <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Arama</h3>
+            <button class="close-search" onclick="closeSearchModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Aramak istediğiniz kelimeyi giriniz..." />
+            <button class="search-button" onclick="performSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
     <footer>
         <div class="footer-content">
             <div class="footer-section">

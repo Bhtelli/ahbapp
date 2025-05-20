@@ -548,6 +548,291 @@
                 width: 100%;
             }
         }
+
+        .size-selection {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            justify-content: center;
+        }
+
+        .size-btn {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .size-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .size-btn.selected {
+            background: #7fc349;
+            color: white;
+            border-color: #7fc349;
+        }
+
+        .size-error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            text-align: center;
+            display: none;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            display: inline-block;
+            background: #7fc349;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-category:hover {
+            background: #467122;
+        }
+
+        .product-info h3 {
+            color: #212529;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .product-price {
+            color: #212529;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .size-selection {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        .size-btn {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .size-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .size-btn.selected {
+            background: #7fc349;
+            color: white;
+            border-color: #7fc349;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #7fc349;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #467122;
+        }
+
+        .add-to-cart.added {
+            background-color: #28a745;
+        }
+
+        .size-error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            text-align: left;
+            display: none;
+        }
+
+        /* Update filter button styles to match */
+        .filter-button {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #7fc349;
+            border-radius: 0.25rem;
+            background-color: white;
+            color: #7fc349;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button:hover {
+            background-color: #7fc349;
+            color: white;
+        }
+
+        .filter-button.active {
+            background-color: #7fc349;
+            color: white;
+        }
+
+        .search-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 100px;
+        }
+
+        .search-modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-header h3 {
+            margin: 0;
+            color: #212529;
+            font-size: 1.5rem;
+        }
+
+        .close-search {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .close-search:hover {
+            color: #dc3545;
+        }
+
+        .search-input-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #7fc349;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #467122;
+        }
+
+        .search-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #7fc349;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #467122;
+        }
+
+        .search-results {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .search-result-item {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .search-result-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: #212529;
+        }
+
+        .search-result-item p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -671,6 +956,11 @@
                     <div class="product-meta">
                         <div class="product-price">₺299.99</div>
                         <a href="sepet.html">
+                            <div class="size-selection">
+                                <button class="size-btn" data-size="S">S</button>
+                                <button class="size-btn" data-size="M">M</button>
+                                <button class="size-btn" data-size="L">L</button>
+                            </div>
                         <button class="add-to-cart">Sepete Ekle</button>
                     </a>
                     </div>
@@ -708,23 +998,27 @@
             </div>
 
             <div class="product-card">
-                <img src="swt.png" alt="Ahbap sweatshirt" class="product-image">
+                <img src="./swt.png" alt="Ahbap sweatshirt" class="product-image">
                 <div class="product-info">
                     <span class="product-category">Giyim</span>
                     <h3>Ahbap Sweatshirt</h3>
-                    <p>%100 pamuklu kumaştan üretilen özel tasarım sweatshirt</p>
+                    <p>Ahbap logosu baskılı, %100 pamuklu kumaştan üretilmiş rahat ve şık sweatshirt.</p>
                     <div class="product-meta">
-                        <div class="product-price">₺199.99</div>
-                        <button class="add-to-cart">Sepete Ekle</button>
+                        <div class="product-price">₺350</div>
+                        <div class="size-selection">
+                            <button class="size-btn" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                        </div>
+                        <button class="add-to-cart" data-product="swt">Sepete Ekle</button>
                     </div>
                 </div>
             </div>
 
-
             <div class="product-card">
                 <img src="kitap.png" alt="Ahbap Kitap" class="product-image">
                 <div class="product-info">
-                    <span class="product-category">Diğer</span>
+                    <span class="product-category">Ev & Yaşam</span>
                     <h3>Ahbap Kitap</h3>
                     <p>Sevgi bulaşıcıdır 💚</p>
                     <div class="product-meta">
@@ -830,6 +1124,24 @@
         </div>
     </main>
 
+   <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Arama</h3>
+            <button class="close-search" onclick="closeSearchModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Aramak istediğiniz kelimeyi giriniz..." />
+            <button class="search-button" onclick="performSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -856,6 +1168,24 @@
         </div>
     </footer>
 
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header">
+                <h3>Arama</h3>
+                <button class="close-search" onclick="closeSearchModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <input type="text" id="searchInput" placeholder="Aramak istediğiniz kelimeyi giriniz..." />
+                <button class="search-button" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -864,6 +1194,37 @@
             const sortButton = document.getElementById('sortButton');
             const sortDropdown = document.getElementById('sortDropdown');
             const sortOptions = document.querySelectorAll('.sort-option');
+
+            // Update filter functionality to handle spaces in category names
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Don't filter if it's the basket or bagiskart button
+                    if (filter === 'sepet' || filter === 'kart') {
+                        return;
+                    }
+
+                    productCards.forEach(card => {
+                        const categories = Array.from(card.querySelectorAll('.product-category'))
+                            .map(cat => cat.textContent.toLowerCase().trim());
+                        
+                        // Handle special case for "Ev & Yaşam"
+                        const normalizedFilter = filter === 'ev' ? 'ev & yaşam' : filter.toLowerCase();
+                        
+                        if (filter === 'all' || categories.includes(normalizedFilter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
 
             // Toggle sort dropdown
             sortButton.addEventListener('click', function(e) {
@@ -944,23 +1305,57 @@
                 }
             }
 
-            // Add to cart functionality
+            // Size selection functionality
+            document.querySelectorAll('.size-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove selected class from all buttons in the same product card
+                    const productCard = this.closest('.product-card');
+                    productCard.querySelectorAll('.size-btn').forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked button
+                    this.classList.add('selected');
+                    
+                    // Hide any existing size error message
+                    const errorMsg = productCard.querySelector('.size-error');
+                    if (errorMsg) {
+                        errorMsg.style.display = 'none';
+                    }
+                });
+            });
+
+            // Update add to cart functionality
             const addToCartButtons = document.querySelectorAll('.add-to-cart');
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default link behavior
+                    e.preventDefault();
                     
                     const productCard = this.closest('.product-card');
                     const productName = productCard.querySelector('h3').textContent;
                     const productImage = productCard.querySelector('.product-image').getAttribute('src');
                     const productCategory = productCard.querySelector('.product-category').textContent;
                     const productDescription = productCard.querySelector('p').textContent;
+                    const selectedSize = productCard.querySelector('.size-btn.selected');
                     
-                    // Get price, handling both regular and discounted prices
+                    // Check if size is selected for sweatshirt products
+                    if (productName.toLowerCase().includes('sweatshirt') && !selectedSize) {
+                        // Show error message if no size is selected
+                        let errorMsg = productCard.querySelector('.size-error');
+                        if (!errorMsg) {
+                            errorMsg = document.createElement('div');
+                            errorMsg.className = 'size-error';
+                            productCard.appendChild(errorMsg);
+                        }
+                        errorMsg.textContent = 'Lütfen bir beden seçiniz';
+                        errorMsg.style.display = 'block';
+                        return;
+                    }
+                    
+                    // Get price
                     let productPrice;
                     const priceElement = productCard.querySelector('.product-price');
                     if (priceElement.querySelector('.original-price')) {
-                        // If there's a discounted price, use the lower price
                         productPrice = parseFloat(priceElement.textContent.replace(/[^0-9.]/g, ''));
                     } else {
                         productPrice = parseFloat(priceElement.textContent.replace(/[^0-9.]/g, ''));
@@ -969,29 +1364,30 @@
                     // Get existing basket or initialize empty array
                     let basket = JSON.parse(localStorage.getItem('basket')) || [];
                     
-                    // Create basket item with type information
+                    // Create basket item
                     const basketItem = {
-                        id: Date.now(), // Generate unique ID
+                        id: Date.now(),
                         title: productName,
-                        image: productImage, // Store the full image path
+                        image: productImage,
                         description: productDescription,
                         category: productCategory,
                         selectedPrice: productPrice,
                         quantity: 1,
                         addedAt: new Date().toISOString(),
-                        type: 'urun'
+                        type: 'urun',
+                        size: selectedSize ? selectedSize.dataset.size : null
                     };
                     
-                    // Check if product already exists in basket
+                    // Check if product already exists in basket (including size for sweatshirts)
                     const existingItemIndex = basket.findIndex(item => 
-                        item.title === productName && item.type === 'urun'
+                        item.title === productName && 
+                        item.type === 'urun' &&
+                        (item.size === basketItem.size || (!item.size && !basketItem.size))
                     );
                     
                     if (existingItemIndex > -1) {
-                        // Update quantity if item exists
                         basket[existingItemIndex].quantity += 1;
                     } else {
-                        // Add new item if it doesn't exist
                         basket.push(basketItem);
                     }
                     
@@ -1021,14 +1417,96 @@
                     setTimeout(() => {
                         window.location.href = 'sepet.html';
                     }, 1000);
-
-                    console.log(`${productName} sepete eklendi`);
                 });
             });
 
             // Initial basket count update
             updateBasketCount();
         });
+
+        // Update search icon click handler
+        document.querySelector('.fa-magnifying-glass').parentElement.addEventListener('click', function(e) {
+            e.preventDefault();
+            openSearchModal();
+        });
+
+        function openSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.style.display = 'flex';
+            document.getElementById('searchInput').focus();
+        }
+
+        function closeSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').innerHTML = '';
+        }
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+
+            if (!searchTerm.trim()) {
+                return;
+            }
+
+            let hasResults = false;
+
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const category = card.querySelector('.product-category').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                    hasResults = true;
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.innerHTML = `
+                        <h4>${card.querySelector('h3').textContent}</h4>
+                        <p>${card.querySelector('p').textContent}</p>
+                        <p class="category">${card.querySelector('.product-category').textContent}</p>
+                    `;
+                    resultItem.addEventListener('click', () => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.style.animation = 'highlight 2s';
+                        closeSearchModal();
+                    });
+                    searchResults.appendChild(resultItem);
+                }
+            });
+
+            if (!hasResults) {
+                searchResults.innerHTML = '<div class="search-result-item"><p>Arama sonucu bulunamadı.</p></div>';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('searchModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSearchModal();
+            }
+        });
+
+        // Handle Enter key in search input
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Add highlight animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0% { background-color: #fff; }
+                50% { background-color: #7fc34933; }
+                100% { background-color: #fff; }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html> 

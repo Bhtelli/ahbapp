@@ -125,6 +125,23 @@
             </div>
         </div>
     </main>
+    <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Arama</h3>
+            <button class="close-search" onclick="closeSearchModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Aramak istediğiniz kelimeyi giriniz..." />
+            <button class="search-button" onclick="performSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
 
     <footer>
         <div class="footer-content">
@@ -217,6 +234,42 @@
                 }
             }
         });
+        // entry.html'deki form submit kısmına ekle
+if (isValid) {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    fetch('https://localhost:5001/api/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: email,
+            password: password
+        })
+    })
+    .then(async response => {
+        if (!response.ok) {
+            const message = await response.text();
+            alert("Giriş başarısız: " + message);
+            return;
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data?.token) {
+            // Token'ı localStorage'a kaydet
+            localStorage.setItem("jwtToken", data.token);
+            // Kullanıcıyı yönlendir
+            window.location.href = "home.html";
+        }
+    })
+    .catch(error => {
+        console.error("Hata:", error);
+        alert("Bir hata oluştu!");
+    });
+}
     </script>
 </body>
 </html> 

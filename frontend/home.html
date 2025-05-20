@@ -70,9 +70,14 @@
                   
                 <div><a href="entry.html">Üyelik</a></div>
                 <div>
-                    <a href="bagis.html" target="_blank">
-                    <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
+                    <a href="bagis.html" data-protected>
+                        <button class="bagıs-yap-btn-1">Bağış Yap 💚</button>
                     </a>
+                </div>
+                <div>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                    </button>
                 </div>
             </div>
         </div>
@@ -168,6 +173,24 @@
             </div>
             <div>Ahbap haberleri ve gündemi takip edin.</div>
         </div>
+
+        <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+        <div class="search-header">
+            <h3>Arama</h3>
+            <button class="close-search" onclick="closeSearchModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-input-container">
+            <input type="text" id="searchInput" placeholder="Aramak istediğiniz kelimeyi giriniz..." />
+            <button class="search-button" onclick="performSearch()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
         <footer>
           <div class="footer-content">
               <div class="footer-section">
@@ -195,7 +218,8 @@
       </footer>
 
 <script src="main.js">
-</script>
+    </script>
+
 <script>
   const tutarKutular = document.querySelectorAll(".tutarlar");
   const tutarInput = document.querySelector(".tutar-input");
@@ -206,8 +230,131 @@
       tutarInput.value = miktar;
     });
   });
+
+
+
+    function logout() {
+        // Clear any stored user data
+        localStorage.removeItem('user');
+        localStorage.removeItem('basket');
+        
+        // Show logout notification
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        `;
+        notification.textContent = 'Başarıyla çıkış yapıldı!';
+        document.body.appendChild(notification);
+
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+            // Redirect to home page
+            window.location.href = 'home.html';
+        }, 3000);
+    }
+
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = localStorage.getItem('user');
+        const logoutBtn = document.querySelector('.logout-btn');
+        
+        if (logoutBtn) {
+            if (user) {
+                logoutBtn.style.display = 'flex';
+            } else {
+                logoutBtn.style.display = 'none';
+            }
+        }
+    });
 </script>
 
+<script>
+    // Update search icon click handler
+    document.querySelector('.fa-magnifying-glass').parentElement.addEventListener('click', function(e) {
+        e.preventDefault();
+        openSearchModal();
+    });
+
+    function openSearchModal() {
+        const modal = document.getElementById('searchModal');
+        modal.style.display = 'flex';
+        document.getElementById('searchInput').focus();
+    }
+
+    function closeSearchModal() {
+        const modal = document.getElementById('searchModal');
+        modal.style.display = 'none';
+        document.getElementById('searchInput').value = '';
+        document.getElementById('searchResults').innerHTML = '';
+    }
+
+    function performSearch() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+
+        if (!searchTerm.trim()) {
+            return;
+        }
+
+        // Search through main content sections
+        const sections = [
+            { title: 'Ana Sayfa', content: document.querySelector('.anasayfa') },
+            { title: 'Haberler', content: document.querySelector('.haberler') },
+            { title: 'Bağış', content: document.querySelector('.bagis') }
+        ];
+
+        let hasResults = false;
+
+        sections.forEach(section => {
+            if (section.content) {
+                const text = section.content.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    hasResults = true;
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item';
+                    resultItem.innerHTML = `
+                        <h4>${section.title}</h4>
+                        <p>İlgili içerik bulundu</p>
+                    `;
+                    resultItem.addEventListener('click', () => {
+                        section.content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        section.content.style.animation = 'highlight 2s';
+                        closeSearchModal();
+                    });
+                    searchResults.appendChild(resultItem);
+                }
+            }
+        });
+
+        if (!hasResults) {
+            searchResults.innerHTML = '<div class="search-result-item"><p>Arama sonucu bulunamadı.</p></div>';
+        }
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('searchModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeSearchModal();
+        }
+    });
+
+    // Handle Enter key in search input
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
 
 </body>
 
